@@ -37,10 +37,14 @@
         src="models/Deer.gltf"
         ios-src="models/Deer.usdz"
         ar
-        ar-modes="scene-viewer quick-look"
+        ar-modes="webxr scene-viewer quick-look"
+        ar-scale="fixed"
         camera-controls
         auto-rotate
-        shadow-intensity="1">
+        shadow-intensity="1"
+        loading="eager"
+        reveal="auto"
+        ar-placement="floor">
     </model-viewer>
 </body>
 </html>
