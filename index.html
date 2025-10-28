@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AR Model Viewer</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            const modelViewer = document.querySelector('model-viewer');
+            if (modelViewer && modelViewer.canActivateAR) {
+                modelViewer.activateAR();
+            }
+        });
+    </script>
     <style>
         body {
             margin: 0;
@@ -35,7 +43,7 @@
 <body>
     <model-viewer
         src="models/Deer.gltf"
-        ios-src="models/Deer.usdz"
+        ios-src="models/Deer.usdz#allowsContentScaling=0"
         ar
         ar-modes="webxr scene-viewer quick-look"
         ar-scale="fixed"
@@ -45,8 +53,8 @@
         loading="eager"
         reveal="auto"
         ar-placement="floor"
-        ar-status="auto-activate"
-        interaction-prompt="none">
+        quick-look-browsers="safari chrome"
+        auto-activate-ar>
     </model-viewer>
 </body>
 </html>
